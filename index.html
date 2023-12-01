@@ -23,9 +23,9 @@
     <header>
       <h1 class="title">Giphy Party</h1>
       <form class="search">
-        <input type="text" class="search__input" id="search" />
+        <input type="text" class="search__input" id="search" required />
         <label for="search" class="search__label"></label>
-        <button class="search__button">
+        <button class="search__btn">
           <span class="material-symbols-rounded">search</span>
         </button>
       </form>
@@ -33,16 +33,33 @@
 
     <!-- Content -->
     <section class="content">
+      <!-- Trending -->
       <div class="trending">
         <p class="trending__description">
           Not sure what to look for? Check out trending gifs instead!
         </p>
-        <button class="trending__submit">Random Trending GIF</button>
+        <button class="trending__submit-btn">Get Trending GIFs</button>
       </div>
 
+      <!-- Preview Grid-->
+      <div class="preview-grid hidden">
+        <button class="preview-grid__prev">
+          <span class="material-symbols-rounded">navigate_before</span>
+        </button>
+        <h2 class="preview-grid__title">Click a GIF to save it to your list</h2>
+        <div class="preview-grid__content"></div>
+        <button class="preview-grid__next">
+          <span class="material-symbols-rounded">navigate_next</span>
+        </button>
+        <p class="preview-grid__page"></p>
+        <button class="preview-grid__hide-btn">Hide Results</button>
+      </div>
+
+      <!-- Gif Grid -->
       <div class="gif-grid">
         <h2 class="gif-grid__title">My GIFs</h2>
-        <button class="gif-grid__clear">Clear GIFs</button>
+        <button class="gif-grid__clear-btn">Clear GIFs</button>
+        <div class="gif-grid__content"></div>
       </div>
     </section>
 
@@ -53,6 +70,8 @@
         alt="Site powered by Giphy"
       />
     </footer>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.js"></script>
     <script src="app.js"></script>
