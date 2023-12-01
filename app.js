@@ -91,6 +91,7 @@ $(function () {
         $('<img>')
           .addClass('preview')
           .attr('src', gif.preview)
+          .on('click', renderGif.bind(null, gif.original))
           .appendTo($('.preview-grid__content'));
       }
       $(this).fadeIn(200);
@@ -170,15 +171,36 @@ $(function () {
     // Empty takes care of removing listeners for .preview-grid__content
     $('.preview-grid__content').empty();
     removeEventListeners($('.preview-grid'));
-    $('.preview-grid').fadeTo(300, 0, function () {
+    $('.preview-grid').fadeOut(200, function () {
       // jQuery fade methods add inline styles that we need to remove.
       $(this).removeAttr('style').addClass('hidden');
     });
     currQuery = '';
   }
 
+  /**
+   * Takes a url and creates + renders a gif to .gif-grid.
+   * @param {String} url Url to original size gif
+   */
+  function renderGif(url) {
+    $('<img>')
+      .addClass('gif')
+      .attr('src', url)
+      .appendTo($('.gif-grid__content'))
+  }
+
+  /**
+   * Clears out all gifs in .gif-grid__content.
+   */
+  function clearGifs() {
+    $('.gif-grid__content').fadeOut(200, function() {
+      $(this).removeAttr('style').empty();
+    })
+  }
+
   // Event Listeners
   $('.search').on('submit', onSubmitSearch);
   $('.trending__submit-btn').on('click', getGifs.bind(null, TRENDING_ENDPOINT));
   $('.preview-grid__hide-btn').on('click', hidePreviews);
+  $('.gif-grid__clear-btn').on('click', clearGifs);
 });
