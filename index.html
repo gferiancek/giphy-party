@@ -23,9 +23,9 @@
     <header>
       <h1 class="title">Giphy Party</h1>
       <form class="search">
-        <input type="text" class="search__input" id="search" required/>
+        <input type="text" class="search__input" id="search" required />
         <label for="search" class="search__label"></label>
-        <button class="search__button">
+        <button class="search__btn">
           <span class="material-symbols-rounded">search</span>
         </button>
       </form>
@@ -33,6 +33,14 @@
 
     <!-- Content -->
     <section class="content">
+      <!-- Trending -->
+      <div class="trending">
+        <p class="trending__description">
+          Not sure what to look for? Check out trending gifs instead!
+        </p>
+        <button class="trending__submit-btn">Get Trending GIFs</button>
+      </div>
+
       <!-- Preview Grid-->
       <div class="preview-grid hidden">
         <button class="preview-grid__prev">
@@ -45,14 +53,6 @@
         </button>
         <p class="preview-grid__page"></p>
         <button class="preview-grid__hide-btn">Hide Results</button>
-      </div>
-
-      <!-- Trending -->
-      <div class="trending">
-        <p class="trending__description">
-          Not sure what to look for? Check out trending gifs instead!
-        </p>
-        <button class="trending__submit">Random Trending GIF</button>
       </div>
 
       <!-- Gif Grid -->
