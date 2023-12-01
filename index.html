@@ -3,8 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <title>Giphy Party!</title>
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="app.css" />
   </head>
   <body>
+    <!-- Header -->
+    <header>
+      <h1 class="title">Giphy Party</h1>
+      <form class="search">
+        <input type="text" class="search__input" id="search" />
+        <label for="search" class="search__label"></label>
+        <button class="search__button">
+          <span class="material-symbols-rounded">search</span>
+        </button>
+      </form>
+    </header>
+
+    <!-- Content -->
+    <section class="content">
+      <div class="trending">
+        <p class="trending__description">
+          Not sure what to look for? Check out trending gifs instead!
+        </p>
+        <button class="trending__submit">Random Trending GIF</button>
+      </div>
+
+      <div class="gif-grid">
+        <h2 class="gif-grid__title">My GIFs</h2>
+        <button class="gif-grid__clear">Clear GIFs</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <img
+        src="PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif"
+        alt="Site powered by Giphy"
+      />
+    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.js"></script>
     <script src="app.js"></script>
