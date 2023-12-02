@@ -15,8 +15,9 @@ $(function () {
    */
   function onSubmitSearch(event) {
     event.preventDefault();
-    currQuery = $('.search__input').val();
-    $('.search__input').val('');
+    currQuery = $('#search__input').val();
+    console.log(currQuery);
+    $('#search__input').val('').blur();
     getGifs(SEARCH_ENDPOINT, currQuery);
   }
 
@@ -186,16 +187,16 @@ $(function () {
     $('<img>')
       .addClass('gif')
       .attr('src', url)
-      .appendTo($('.gif-grid__content'))
+      .appendTo($('.gif-grid__content'));
   }
 
   /**
    * Clears out all gifs in .gif-grid__content.
    */
   function clearGifs() {
-    $('.gif-grid__content').fadeOut(200, function() {
+    $('.gif-grid__content').fadeOut(200, function () {
       $(this).removeAttr('style').empty();
-    })
+    });
   }
 
   // Event Listeners
